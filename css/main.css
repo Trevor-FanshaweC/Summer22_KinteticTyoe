@@ -1,0 +1,128 @@
+* {
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    background-color: black;
+    color: white;
+}
+
+.hidden { display: none; }
+
+.animation {
+    width: 555px;
+    margin: 0 auto;
+    border: thin solid black;
+
+    position: relative;
+    overflow: hidden;
+
+    background-color: white;
+}
+
+#layout { position: relative; z-index: 5000; }
+
+#bullets { opacity: 0; }
+
+.text-fade { animation: fadeWordsIn 0.2s forwards; }
+
+.tony-intro {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 431px;
+
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+
+.animate-tony {
+    animation-name: moveTony;
+}
+
+
+/* the 'greater than' means a direct descendant of the original container 
+(the element with an id of #firstFive) */
+
+#firstFive > path { opacity: 0; }
+
+.start-button { 
+    position: absolute;  
+    bottom: 50px;
+    left: 270px;
+    width: 150px;
+
+    cursor: pointer;
+
+    z-index: 5001;
+}
+
+
+
+/* keyframe animations go here */
+#scarface { animation-duration: 1.5s; animation-delay: 0.5s }
+#kinetic { animation-duration: 2s;  animation-delay: 0.5s }
+#type { animation-duration: 2s; animation-delay: 0.75s }
+#experiment { animation-duration: 2s;  animation-delay: 1s }
+
+/* text animation synced to audio */
+#you { animation-delay: 0.1s; }
+#wanna { animation-delay: 0.2s; }
+#play { animation-delay: 0.28s;}
+#rough { animation-delay: 0.5s; }
+
+#ok { animation-delay: 1.5s; }
+#say { animation-delay: 2.7s; }
+#hello { animation-delay: 3s; }
+#to { animation-delay: 3.5s; }
+#mylittle { animation-delay: 3.6s; }
+#friend { animation-delay: 4.2s; }
+
+.intro-fade {
+    animation-name: fadeElementOut;
+    animation-fill-mode: forwards;
+}
+
+.tony-gun { 
+    position: absolute;
+    z-index: 500;
+    bottom: -60px;
+    right: -50px;
+
+    transform: scale(0.7);
+    animation-delay: 2s;
+
+    opacity: 0;
+}
+
+.zoom-tony { animation: zoomTony 2.5s forwards; }
+
+/* generic opacity fade */
+@keyframes fadeElementOut {
+    from { opacity: 1 }
+    to { opacity: 0 }
+}
+
+@keyframes moveTony {
+    to { left: -500px; }
+}
+
+@keyframes fadeWordsIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes zoomTony {
+    0% { opacity: 0 }
+    10% { opacity: 1 }
+
+    80% { transform: scale(1.8); opacity: 1; }
+    100% { opacity: 1; transform: scale(1); }
+}
