@@ -90,6 +90,8 @@ body {
     animation-fill-mode: forwards;
 }
 
+.zoom-tony { animation: zoomTony 2.5s forwards; }
+
 .tony-gun { 
     position: absolute;
     z-index: 500;
@@ -101,8 +103,6 @@ body {
 
     opacity: 0;
 }
-
-.zoom-tony { animation: zoomTony 2.5s forwards; }
 
 /* generic opacity fade */
 @keyframes fadeElementOut {
